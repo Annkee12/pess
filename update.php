@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Police Emergency Service System</title>
-<link href="header_style.css" rel="stylesheet" type="text/css">
-<link href="content_style.css" rel="stylesheet" type="text/css">
+<link href="contentStyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- Part 1 -->
@@ -16,6 +15,7 @@ if (!isset($_POST["btnSearch"])){
 <!-- create a form to search for patrol car based on id -->
 <form name="form1" method="post"
 	  action-"<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+	<div align="center">
 	<table class="ContentStyle">
 		<tr></tr>
 		<tr>
@@ -24,6 +24,7 @@ if (!isset($_POST["btnSearch"])){
 			<td><input type="submit" name="btnSearch" id="btnSearch" value="Search"></td>
 		</tr>
 	</table>
+	</div>
 </form>
 	
 <!--part 2 -->
@@ -72,7 +73,8 @@ $conn->close();
 <!-- display a form for operator to update status of patrol car -->
 <form name="form2" method="post"
 	  action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?> ">
-<table>
+	<div align="center">
+<table class="ContentStyle">
 	<tr></tr>
 	<tr>
 		<td>ID: </td>
@@ -93,6 +95,7 @@ $conn->close();
 	</tr>
 </table>
 </form>
+</div>
 <!-- part 3-->
 <?php 
 }

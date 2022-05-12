@@ -4,8 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Police Emergency Service System</title>
-<link href="header_style.css" rel="stylesheet" type="text/css">
-<link href="content_style.css" rel="stylesheet" type="text/css">
+<link href="contentStyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	function validateForm()
 		{
@@ -27,12 +26,18 @@
 					alert("Location is required.");
 					return false;
 				}
+			var d=document.forms ["frmLogCall"]["incidentDesc"].value;
+			if (d==null || d=="")
+				{
+					alert("Desciption is required.");
+					return false;
+				}
 		}
 	
 	</script>
 </head>
 
-<body>
+<body align="center">
 	<?php	//import nav.php
 	require_once 'nav.php';
 	?>
@@ -61,10 +66,10 @@
 	?>
 	<form name="frmLogCall" method="post"
 		  onSubmit="return validateForm()" action="dispatch.php">
-	
-	<table class="ContentStyle">
+<div align="center">
+	<table align="center" class="ContentStyle" >
 		<tr>
-			<td colspan="2">Log Call Panel</td>
+			<td colspan="2" align="center">Log Call Panel</td>
 		</tr>	
 		
 		<tr>
@@ -102,6 +107,7 @@
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="btnProcessCall" id="btnProcessCall" value="Process Call..."></td>
 		</tr>
 	</table>
+		</div>
 </form>
 </body>
 </html>
